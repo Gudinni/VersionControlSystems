@@ -8,7 +8,15 @@ def send_request(status_code=200):
     return response.status_code
 
 
-code = int(input("Введите http код для проверки >"))
+while True:
+    try:
+        code = int(input('Введите http код для проверки: '))
+
+    except ValueError:
+        print('Требуется ввести число, попробуйте снова\n')
+
+    else:
+        break
 
 response_code = None
 try:
